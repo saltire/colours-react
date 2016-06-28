@@ -22,7 +22,7 @@ var ColourRow = React.createClass({
         var colourStyle = {background: 'rgb(' + colour.red + ', ' + colour.green + ', ' + colour.blue + ')'};
 
         return (
-            <li className='colour-row'>
+            <li>
                 <div className='control left'><a className='handle' title='Move up/down'>░</a></div>
                 <div className='colour'><button title='Set background to {colour.name}' onClick={this.onClickColour} style={colourStyle}></button></div>
                 <div className='name'><input type='text' maxlength='50' value={colour.name} onChange={this.onChange} /></div>
@@ -94,17 +94,15 @@ var ColourList = React.createClass({
 
         return (
             <main className={this.getClass()} style={backgroundStyle}>
-                <div className='container'>
-                    <header>
-                        <div className='name'>Name</div>
-                        <div className='hex'>Hex</div>
-                        <div className='numbers'>RGB</div>
-                        <div className='numbers'>HSV</div>
-                    </header>
-                    <ul className='colour-list'>
-                        {rows}
-                    </ul>
-                </div>
+                <header>
+                    <div className='name'>Name</div>
+                    <div className='hex'>Hex</div>
+                    <div className='numbers'>RGB</div>
+                    <div className='numbers'>HSV</div>
+                </header>
+                <ul>
+                    {rows}
+                </ul>
             </main>
         );
     }
