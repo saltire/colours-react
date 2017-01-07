@@ -36,7 +36,7 @@ gulp.task('libs', () => {
 gulp.task('serve', () => {
     connect.server({
         root: 'dist',
-        livereload: true
+        port: process.env.PORT || 5000
     });
 });
 
@@ -47,4 +47,4 @@ gulp.task('watch', () => {
 });
 
 gulp.task('build', ['babel', 'less', 'src', 'libs']);
-gulp.task('default', ['serve', 'watch']);
+gulp.task('default', ['build', 'serve', 'watch']);
